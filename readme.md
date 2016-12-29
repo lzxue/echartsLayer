@@ -7,8 +7,7 @@ In order to use this plugin, include the echartsjs andEchartsLayer.js  on your p
 ### import
 
 ```html
-  
-    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+    <script type="text/javascript" src="./echarts-all-3.js"></script>
     <script src='./lib/mapbox-gl-dev.js'></script>
     <link href='./lib/mapbox-gl.css' rel='stylesheet' />
     <script type="text/javascript" src="../dist/EchartsLayer.js"></script>
@@ -17,20 +16,21 @@ In order to use this plugin, include the echartsjs andEchartsLayer.js  on your p
 ### with webpack
 
 ```js
-   npm install echartLayer
+   npm install echartslayer
 ```
 ```js
 require('echarts');
 require('echartLayer');
 ```
 
-### how to use 
+### Usage
 
+set the charts attribute coordinateSystem:"GLMap"
 
 ```js
 option = {
   
-  GLMap: {
+  GLMap: { //Must
 
   },
 

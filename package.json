@@ -1,8 +1,8 @@
 {
-  "name": "echartsLayer",
-  "version": "0.1.0",
+  "name": "echartslayer",
+  "version": "0.1.1",
   "description": "echarts MapboxGL",
-  "main": "webpack.config.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,5 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "echarts": "^3.3.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lzxue/echartsLayer.git"
+  },
+  "keywords": [
+    "mapboxgl",
+    "echarts"
+  ],
+  "homepage": "https://github.com/lzxue/echartsLayer#readme"
 }
