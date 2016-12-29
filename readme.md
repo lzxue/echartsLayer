@@ -3,13 +3,21 @@ Add [echarts](echarts.baidu.com/#) charts to  [mapboxGL](https://github.com/mapb
 
 In order to use this plugin, include the echartsjs andEchartsLayer.js  on your page and use it as follow:
 
+### demo
+
+[全球航线](https://lzxue.github.io/echartsLayer/demo/lines-airline.html)
+
+[全国空气质量](https://lzxue.github.io/echartsLayer/demo/effectScatter-map.html)
+
+[模拟迁徙](https://lzxue.github.io/echartsLayer/demo/geo-line.html)
+
+[微博签到](https://lzxue.github.io/echartsLayer/demo/scatter-weibo.html)
+
 
 ### import
 
 ```html
     <script type="text/javascript" src="./echarts-all-3.js"></script>
-    <script src='./lib/mapbox-gl-dev.js'></script>
-    <link href='./lib/mapbox-gl.css' rel='stylesheet' />
     <script type="text/javascript" src="../dist/EchartsLayer.js"></script>
 ```
 
@@ -28,35 +36,12 @@ require('echartLayer');
 set the charts attribute coordinateSystem:"GLMap"
 
 ```js
-option = {
-  
+option = { 
   GLMap: { //Must
 
   },
-
   series: [{
-    name: 'pm2.5',
-    type: 'scatter',
     coordinateSystem: 'GLMap',
-    data: convertData(data),
-    symbolSize: function (val) {
-      return val[2] / 10
-    },
-    label: {
-      normal: {
-        formatter: '{b}',
-        position: 'right',
-        show: false
-      },
-      emphasis: {
-        show: true
-      }
-    },
-    itemStyle: {
-      normal: {
-        color: '#ddb926'
-      }
-    }
   }]
 }
 ```
