@@ -1,5 +1,5 @@
-## mapboxGL echartLayer
-Add [echarts](echarts.baidu.com/#) charts for [mapboxGL](https://github.com/mapbox/mapbox-gl-js)
+## mapboxGL echartslayer
+Add [echarts](echarts.baidu.com/#) charts to  [mapboxGL](https://github.com/mapbox/mapbox-gl-js) as a layer
 
 In order to use this plugin, include the echartsjs andEchartsLayer.js  on your page and use it as follow:
 
@@ -16,7 +16,7 @@ In order to use this plugin, include the echartsjs andEchartsLayer.js  on your p
 ### with webpack
 
 ```js
-   npm install echartslayer
+npm install echartslayer
 ```
 ```js
 require('echarts');

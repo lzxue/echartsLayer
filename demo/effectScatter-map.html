@@ -23,8 +23,6 @@
             container: 'container', // container id
             style: {
                 'version': 8,
-                'glyphs': 'http://101.201.77.235:8502/{fontstack}/{range}.pbf',
-
                 'sources': {},
                 'layers': []
             },
@@ -37,7 +35,7 @@
         map.on('load', function () {
             map.addSource('google.tile', {
                 'type': 'raster',
-                'tiles': ['http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'],
+                'tiles': ['https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'],
                 'tileSize': 256
             })
             map.addLayer({
