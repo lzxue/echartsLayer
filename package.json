@@ -1,0 +1,14 @@
+{
+  "name": "echartsLayer",
+  "version": "0.1.0",
+  "description": "echarts MapboxGL",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lizhengxue",
+  "license": "ISC",
+  "dependencies": {
+    "echarts": "^3.3.2"
+  }
+}

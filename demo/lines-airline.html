@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /*.echartMap div {
+            position: absolute;
+            overflow: auto;
+        }*/
+    </style>
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+    <script src='./lib/mapbox-gl-dev.js'></script>
+    <link href='./lib/mapbox-gl.css' rel='stylesheet' />
+     <script type="text/javascript" src="../dist/EchartsLayer.js"></script>
+    <script type="text/javascript">
+        $.get('./data/flights.json', function (data) {
+            function getAirportCoord(idx) {
+                return [data.airports[idx][3], data.airports[idx][4]];
+            }
+            var routes = data.routes.map(function (airline) {
+                return [
+                    getAirportCoord(airline[1]),
+                    getAirportCoord(airline[2])
+                ];
+            });
+
+            var map = new mapboxgl.Map({
+                container: 'container', // container id
+                style: {
+                    'version': 8,
+                    // "sprite": "./",
+                    'glyphs': 'http://101.201.77.235:8502/{fontstack}/{range}.pbf',
+                    'sources': {},
+                    'layers': []
+                },
+                center: [112, 37.94], // starting position
+                zoom: 2 // starting zoom
+            })
+            map.addControl(new mapboxgl.NavigationControl())
+        
+            map.on('load', function () {
+                map.addSource('google.tile', {
+                    'type': 'raster',
+                    'tiles': ['http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}'],
+                    'tileSize': 256
+                })
+                map.addLayer({
+                    'id': 'google',
+                    'type': 'raster',
+                    'source': 'google.tile'
+                })
+
+                var echartslayer=new EchartsLayer(map);
+                echartslayer.chart.setOption(option = {
+                    title: {
+                        text: 'World Flights',
+                        left: 'center',
+                        textStyle: {
+                            color: '#eee'
+                        }
+                    },
+
+                    tooltip: {
+                        formatter: function (param) {
+                            var route = data.routes[param.dataIndex];
+                            return data.airports[route[1]][1] + ' > ' + data.airports[route[
+                                2]][1];
+                        }
+                    },
+                    GLMap: {
+                        roam: true
+                    },
+                    series: [{
+                        type: 'lines',
+                        coordinateSystem: 'GLMap',
+                        data: routes,
+                        large: true,
+                        largeThreshold: 100,
+                        lineStyle: {
+                            normal: {
+                                opacity: 0.05,
+                                width: 0.5,
+                                curveness: 0.3
+                            }
+                        },
+                        // 设置混合模式为叠加
+                        blendMode: 'lighter'
+                    }]
+                });
+
+
+            })
+
+
+
+        });;
+       
+    </script>
+</body>
+
+</html>
