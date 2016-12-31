@@ -1,5 +1,5 @@
 ## mapboxGL echartslayer
-Add [echarts](echarts.baidu.com/#) charts to  [mapboxGL](https://github.com/mapbox/mapbox-gl-js) as a layer
+Add [echarts](https://github.com/ecomfe/echarts) charts to  [mapboxGL](https://github.com/mapbox/mapbox-gl-js) as a layer
 
 In order to use this plugin, include the echartsjs andEchartsLayer.js  on your page and use it as follow:
 
