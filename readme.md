@@ -28,7 +28,7 @@ npm install echartslayer
 ```
 ```js
 require('echarts');
-require('echartLayer');
+require('echartslayer');
 ```
 
 ### Usage
