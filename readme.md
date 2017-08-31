@@ -28,7 +28,11 @@ npm install echartslayer
 ```
 ```js
 require('echarts');
-require('echartslayer');
+var EchartLayer=require('echartslayer');
+
+var echartslayer = new EchartsLayer(map);
+echartslayer.chart.setOption(option);
+
 ```
 
 ### Usage
