@@ -202,15 +202,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var rendering = true
 
 	      var glMap = echarts.glMap
-	      
-	     
+
+
 	      var viewportRoot = api.getZr().painter.getViewportRoot()
 	      var coordSys = GLMapModel.coordinateSystem
 	      var moveHandler = function (type, target) {
 	        if (rendering) {
 	          return
 	        }
-	        var offsetEl = viewportRoot.parentNode.parentNode.parentNode
+	        // var offsetEl = viewportRoot.parentNode.parentNode.parentNode
+	        var offsetEl = document.getElementsByClassName('mapboxgl-map')[0];
+
 	        var mapOffset = [
 	          -parseInt(offsetEl.style.left, 10) || 0,
 	          -parseInt(offsetEl.style.top, 10) || 0

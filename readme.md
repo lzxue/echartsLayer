@@ -32,6 +32,8 @@ var EchartLayer=require('echartslayer');
 
 var echartslayer = new EchartsLayer(map);
 echartslayer.chart.setOption(option);
+//移除 
+echartslayer.remove();
 
 ```
 

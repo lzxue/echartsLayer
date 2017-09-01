@@ -1,6 +1,6 @@
 {
   "name": "echartslayer",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "echarts MapboxGL",
   "main": "index.js",
   "scripts": {
